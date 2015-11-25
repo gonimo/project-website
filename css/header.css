@@ -1,0 +1,43 @@
+.left, .right{
+	width: 20%;
+	padding: 1%;
+}
+
+.middle{
+	width: 60%;
+}
+
+
+.left img{
+	height: 100%;
+	width: 100%;
+	background-color: blue;
+}
+
+.right #split_vertical_box1{
+	width: 100%;
+	max-width: 100%;
+	height: 45%;
+}
+
+	#split_vertical_box1 img{
+		max-width: 100%;
+		max-height: 100%;
+		height: 200px;
+		margin: 0 auto;
+		background-color: purple;
+	}
+
+.right #split_vertical_box2{
+	width: 100%;
+	height: 25%;
+	background-color: blue;
+}
+
+	#split_vertical_box2 p{
+		width: 90%;
+		text-align: right;
+		padding-top: 0;
+		padding-right: 15px;
+		margin: 0 auto;
+	}

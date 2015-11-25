@@ -1,0 +1,11 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.left, .middle, .right{
+	float: left;
+	background-color: red;
+	height: 200px;
+}
