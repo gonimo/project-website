@@ -3,7 +3,11 @@
 }
 
 .left, .middle{
-	border-right: 0;
+	border-right: 1px dotted black;
+}
+
+.middle, .right{
+	border-left: 0;
 }
 
 .left{
