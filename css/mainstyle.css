@@ -14,14 +14,18 @@ body{
 .left, .middle, .right{
 	float: left;
 	height: 200px;
-	background-color: lightblue;
-	border: 1px solid black;
 }
 
 header{
 	width: 98%;
 	height: 200px;
 	margin: 1%;
+	border-radius: 10px;
+	background: -webkit-linear-gradient(90deg, #2979d3, #56caff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #2979d3, #56caff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #2979d3, #56caff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, #2979d3, #56caff); /* Standard syntax */
+	box-shadow: 10px 10px 5px grey;
 }
 
 main{

@@ -92,7 +92,7 @@
 	</main>
 
 	<footer>
-		Copyright &copy; <?php if(date("Y") != "2015") echo "2015 - " . date("Y"); else echo "2015"; ?> The Gonimo Group
+		Copyright &copy; <?php if(date("Y") != "2015") echo "2015 - " . date("Y"); else echo "2015"; ?> by Michael Klotzner
 	</footer>
 
 </body>
