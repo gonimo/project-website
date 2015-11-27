@@ -7,7 +7,10 @@
 body{
 	height: 100%;
 	width: 100%;
-	background-color: lightgrey;
+	background: -webkit-linear-gradient(45deg, #111111, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(45deg, #111111, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(45deg, #111111, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(45deg, #888, #ccc); /* Standard syntax */
 	z-index: -5;
 }
 
@@ -17,9 +20,13 @@ body{
 }
 
 header{
-	width: 98%;
+	width: 80%;
 	height: 200px;
-	margin: 1%;
+	margin: 1% auto;
+}
+
+.box, article, footer{
+	border: 1px solid white;
 	border-radius: 10px;
 	background: -webkit-linear-gradient(90deg, #2979d3, #56caff); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(90deg, #2979d3, #56caff); /* For Opera 11.1 to 12.0 */
@@ -28,19 +35,26 @@ header{
 	box-shadow: 10px 10px 5px grey;
 }
 
+
 main{
-	width: 98%;
+	width: 100%;
 	min-height: 200px;
-	margin: 1%;
-	padding: 0.5em 1.5em;
 	#border-radius: 10px;
 	#border: 1px solid black;
 	#background-color: #CCBB77;
 }
 
 footer{
-	width: 98%;
-	min-height: 20px;
-	margin: 1%;
+	width: 80%;
+	min-height: 2em;
+	margin: 0 10% 1% 10%;
+	padding-top: 0.4em;
+	border-radius: 8px;
+	border: 1px solid white;
 	background-color: darkgrey;
+	float: left;
+}
+
+footer p{
+	margin-left: 2em;
 }
