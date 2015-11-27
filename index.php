@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./css/mainstyle.css">
 	<link rel="stylesheet" type="text/css" href="./css/header.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -9,7 +12,7 @@
 <body>
 	<header class="box">
 		<div class="left">
-			<img align="left"  src='http://pitch.mybabymonitor.org/src/pix/logo.svg'></img>
+			<a href="http://baby.gonimo.com/"><img align="left"  src='http://pitch.mybabymonitor.org/src/pix/logo.svg'></img></a>
 		</div>
 		<div class="middle">
 			<div class="container-text">
