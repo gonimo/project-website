@@ -83,7 +83,7 @@
 			</article>
 			<article>
 			<h1>Development Status</h1>
-			<p>For detailed information about the current development status and what we are currently working on you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
+			<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
 			<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
 			</article>
 			<article>
