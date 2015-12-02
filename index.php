@@ -31,14 +31,36 @@
   <title>Gonimo - First web-based baby monitor!</title>
 </head>
 <body>
-	<header class="container-fluid navbar navbar-default">
-		<nav>
-			<div class="row">
+	<header>
+		<!-- Fixierte Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Projekt-Titel</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#mission">Our Mission</a></li>
+            <li><a href="#blog">Development Blog</a></li>
+            <li><a href="#interest">Interesting points</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<nav id="headernavbar" class="container-fluid navbar navbar-default">
+			<div class="row center-block">
 				<div class="col-xs-3">
 					<a href="http://project.gonimo.com/"><img align="left" src='http://pitch.mybabymonitor.org/src/pix/logo.svg'></img></a>
 				</div>
 				<div class="col-xs-6">
-					<div class="row vcenter">
+					<div class="row vcenter well">
 						<div class="col-xs-10 col-xs-offset-2">
 							<p>Good Night Monitor</p>
 						</div>
@@ -63,11 +85,11 @@
 			</div>
 		</nav>
 	</header>
-	<main class="container-fluid">
-		<div class="jumbotron">
+	<main class="">
+		<div>
 			<div class="row">
-				<div class="col-xs-12 col-md-8 col-md-push-4">
-					<article>
+				<div id="mission" class="col-xs-12">
+					<article class="container">
 						<h1 class="text-center">Our Mission</h1>
 						<p>Create a superior free baby monitor solution that works in the browser, without any installation or plugins.</p>
 						<p>It will ...</p>
@@ -97,7 +119,7 @@
 						</ul>
 					</article>
 				</div>
-				<div class="col-xs-12 col-md-4 col-md-pull-8">
+				<div class="col-xs-12 col-md-12">
 					<article class="panel panel-primary">
 						<h1 class="panel-heading">Development Blog</h1>
 						<p>You can find news about current development on our development blog.</p>
@@ -113,18 +135,18 @@
 						</div>
 						<p><a class="btn btn-primary" role="button" href="http://blog.gonimo.com/">&gt;&gt; Visit Gonimo Blog &lt;&lt;</a></p>
 					</article>
-					<article class="panel panel-primary"> 
+					<article class="panel panel-primary col-md-4 col-push-4"> 
 						<h1 class="panel-heading">Development Status</h1>
 						<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
 						<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
 					</article>
-					<article class="panel panel-primary">
+					<article class="panel panel-primary col-md-4">
 						<h1 class="panel-heading">Use it!</h1>
 						<p>After every development sprint, you will find the current version up and running <a class="btn-link" role="button" href="http://baby.gonimo.com/">here</a>.</p>
 						<p>Well this link currently does not work, as we have not finished any sprint yet, in the meantime you can try our old prototype.</p>
 						<p><a class="btn btn-primary" role="button" href="http://mybabymonitor.org/">&gt;&gt; Visit Prototype &lt;&lt;</a></p>
 					</article>
-					<article class="panel panel-primary">
+					<article class="panel panel-primary col-md-4">
 						<h1 class="panel-heading">Source Code</h1>
 						<p>Gonimo is free and open source software! You can find the code on github.</p>
 						<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">&gt;&gt; Visit Github &lt;&lt;</a></p>
