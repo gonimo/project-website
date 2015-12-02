@@ -4,13 +4,15 @@
 	$html->load_file('http://blog.gonimo.com/');
 	$ret = $html->find('article[class=post]');
 	foreach($html->find('article[class=post]') as $element) 
-		$element->class = "panel panel-info";
+		$element->class = "panel panel-primary";
 	foreach($html->find('header[class=post-header]') as $element)
 		$element->class = "panel-heading";
 	foreach($html->find('h2[class=post-title]') as $element)
 		$element->class = "text-center";
-	foreach($html->find('a') as $element) 
+	foreach($html->find('a') as $element) {
 		$element->href = "http://blog.gonimo.com" . $element->href;
+		$element->style = "color: white;";
+	}
 	foreach($html->find('footer[class=post-meta]') as $element) 
 		$element->class = "panel-footer";
 	// foreach($html->find('h2[class=text-center]') as $h2)
@@ -33,18 +35,12 @@
 <body>
 	<header>
 		<!-- Fixierte Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="navbar-top" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Navigation ein-/ausblenden</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Projekt-Titel</a>
+          <a class="navbar-brand" href="#">Gonimo</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#mission">Our Mission</a></li>
@@ -85,7 +81,7 @@
 			</div>
 		</nav>
 	</header>
-	<main class="">
+	<main>
 		<div>
 			<div class="row">
 				<div id="mission" class="col-xs-12">
@@ -120,37 +116,44 @@
 					</article>
 				</div>
 				<div class="col-xs-12 col-md-12">
-					<article class="panel panel-primary">
-						<h1 class="panel-heading">Development Blog</h1>
-						<p>You can find news about current development on our development blog.</p>
-						<p>Latest blog entry:</p>
-						<div class="row">
-							<div class="col-xs-10 col-xs-offset-1">
-								<?php
-								for($i = 0; $i < 1; $i++) {
-									echo $ret[$i] . "<br />";
-								}
-								?>
+					<section id="blog">
+						<article class="container text-center">
+							<h1>Development Blog</h1>
+							<p>You can find news about current development on our development blog.</p>
+							<p>Latest blog entry:</p>
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1">
+									<?php
+									$max = 3;
+									for($i = 0; $i < $max; $i++) {
+										echo "<div class='col-xs-" . (12/$max) . "'>";
+										echo $ret[$i] . "<br />";
+										echo "</div>\n";
+									}
+									?>
+								</div>
 							</div>
-						</div>
-						<p><a class="btn btn-primary" role="button" href="http://blog.gonimo.com/">&gt;&gt; Visit Gonimo Blog &lt;&lt;</a></p>
-					</article>
-					<article class="panel panel-primary col-md-4 col-push-4"> 
-						<h1 class="panel-heading">Development Status</h1>
-						<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
-						<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
-					</article>
-					<article class="panel panel-primary col-md-4">
-						<h1 class="panel-heading">Use it!</h1>
-						<p>After every development sprint, you will find the current version up and running <a class="btn-link" role="button" href="http://baby.gonimo.com/">here</a>.</p>
-						<p>Well this link currently does not work, as we have not finished any sprint yet, in the meantime you can try our old prototype.</p>
-						<p><a class="btn btn-primary" role="button" href="http://mybabymonitor.org/">&gt;&gt; Visit Prototype &lt;&lt;</a></p>
-					</article>
-					<article class="panel panel-primary col-md-4">
-						<h1 class="panel-heading">Source Code</h1>
-						<p>Gonimo is free and open source software! You can find the code on github.</p>
-						<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">&gt;&gt; Visit Github &lt;&lt;</a></p>
-					</article>
+							<p><a class="btn btn-primary" role="button" href="http://blog.gonimo.com/">Visit Gonimo Blog</a></p>
+						</article>
+					</section>
+					<section id="interest">
+						<article class="text-center col-md-4 col-push-4"> 
+							<h1>Development Status</h1>
+							<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
+							<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
+						</article>
+						<article class="text-center col-md-4 col-push-4">
+							<h1>Use it!</h1>
+							<p>After every development sprint, you will find the current version up and running <a class="btn-link" role="button" href="http://baby.gonimo.com/">here</a>.</p>
+							<p>Well this link currently does not work, as we have not finished any sprint yet, in the meantime you can try our old prototype.</p>
+							<p><a class="btn btn-primary" role="button" href="http://mybabymonitor.org/">Visit Prototype</a></p>
+						</article>
+						<article class="text-center col-md-4 col-push-4">
+							<h1>Source Code</h1>
+							<p>Gonimo is free and open source software! You can find the code on github.</p>
+							<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">Visit Github</a></p>
+						</article>
+					</section>
 				</div>
 			</div>
 		</div>
