@@ -1,3 +1,25 @@
+<?php
+	include("php/simple_html_dom.php");
+	$html = new simple_html_dom();
+	$html->load_file('http://blog.gonimo.com/');
+	$ret = $html->find('article[class=post]');
+	foreach($html->find('article[class=post]') as $element) 
+		$element->class = "panel panel-info";
+	foreach($html->find('header[class=post-header]') as $element)
+		$element->class = "panel-heading";
+	foreach($html->find('h2[class=post-title]') as $element)
+		$element->class = "text-center";
+	foreach($html->find('a') as $element) 
+		$element->href = "http://blog.gonimo.com" . $element->href;
+	foreach($html->find('footer[class=post-meta]') as $element) 
+		$element->class = "panel-footer";
+	// foreach($html->find('h2[class=text-center]') as $h2)
+	// 	foreach($h2->find('a') as $element){
+	// 		$innertext = $element->innertext;
+	// 		$element->outertext = '';
+	// 		$element->outertext = $innertext;
+	// 	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,9 +66,9 @@
 	<main class="container-fluid">
 		<div class="jumbotron">
 			<div class="row">
-				<div class="col-xs-12 col-md-8">
-					<article class="container">
-						<h1>Our Mission</h1>
+				<div class="col-xs-12 col-md-8 col-md-push-4">
+					<article>
+						<h1 class="text-center">Our Mission</h1>
 						<p>Create a superior free baby monitor solution that works in the browser, without any installation or plugins.</p>
 						<p>It will ...</p>
 						<ul>
@@ -75,24 +97,34 @@
 						</ul>
 					</article>
 				</div>
-				<div class="col-xs-12 col-md-4 container">
-					<article class="panel panel-default">
+				<div class="col-xs-12 col-md-4 col-md-pull-8">
+					<article class="panel panel-primary">
 						<h1 class="panel-heading">Development Blog</h1>
 						<p>You can find news about current development on our development blog.</p>
+						<p>Latest blog entry:</p>
+						<div class="row">
+							<div class="col-xs-10 col-xs-offset-1">
+								<?php
+								for($i = 0; $i < 1; $i++) {
+									echo $ret[$i] . "<br />";
+								}
+								?>
+							</div>
+						</div>
 						<p><a class="btn btn-primary" role="button" href="http://blog.gonimo.com/">&gt;&gt; Visit Gonimo Blog &lt;&lt;</a></p>
 					</article>
-					<article class="panel panel-default"> 
+					<article class="panel panel-primary"> 
 						<h1 class="panel-heading">Development Status</h1>
 						<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
 						<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
 					</article>
-					<article class="panel panel-default">
+					<article class="panel panel-primary">
 						<h1 class="panel-heading">Use it!</h1>
 						<p>After every development sprint, you will find the current version up and running <a class="btn-link" role="button" href="http://baby.gonimo.com/">here</a>.</p>
 						<p>Well this link currently does not work, as we have not finished any sprint yet, in the meantime you can try our old prototype.</p>
 						<p><a class="btn btn-primary" role="button" href="http://mybabymonitor.org/">&gt;&gt; Visit Prototype &lt;&lt;</a></p>
 					</article>
-					<article class="panel panel-default">
+					<article class="panel panel-primary">
 						<h1 class="panel-heading">Source Code</h1>
 						<p>Gonimo is free and open source software! You can find the code on github.</p>
 						<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">&gt;&gt; Visit Github &lt;&lt;</a></p>
