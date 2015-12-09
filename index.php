@@ -9,7 +9,7 @@
 		$element->class = "panel-heading";
 	foreach($html->find('h2[class=post-title]') as $element)
 		$element->class = "text-center";
-	foreach($html->find('a') as $element) {
+	foreach($html->find('h2 a') as $element) {
 		$element->href = "http://blog.gonimo.com" . $element->href;
 		$element->style = "color: white;";
 	}
@@ -42,10 +42,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#headernavbar">Home</a></li>
             <li><a href="#mission">Our Mission</a></li>
             <li><a href="#blog">Development Blog</a></li>
-            <li><a href="#interest">Interesting points</a></li>
+            <li><a href="#more">More!</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -87,6 +87,7 @@
 				<div id="mission" class="col-xs-12">
 					<article class="container">
 						<h1 class="text-center">Our Mission</h1>
+						<div class="center">
 						<p>Create a superior free baby monitor solution that works in the browser, without any installation or plugins.</p>
 						<p>It will ...</p>
 						<ul>
@@ -113,16 +114,18 @@
 							<li>offer Android Wrapper application. Find it on Google Play, maybe additional features.</li>
 							<li>be a great replacement for traditional devices &amp; native apps</li>
 						</ul>
+						</div>
 					</article>
 				</div>
 				<div class="col-xs-12 col-md-12">
 					<section id="blog">
 						<article class="container text-center">
-							<h1>Development Blog</h1>
-							<p>You can find news about current development on our development blog.</p>
-							<p>Latest blog entry:</p>
-							<div class="row">
-								<div class="col-xs-10 col-xs-offset-1">
+							<div class="well">
+								<h1>Development Blog</h1>
+								<p>You can find news about current development on our development blog.</p>
+								<p>Latest blog entries:</p>
+							</div>
+							<div class="row equal">
 									<?php
 									$max = 3;
 									for($i = 0; $i < $max; $i++) {
@@ -131,16 +134,17 @@
 										echo "</div>\n";
 									}
 									?>
-								</div>
 							</div>
 							<p><a class="btn btn-primary" role="button" href="http://blog.gonimo.com/">Visit Gonimo Blog</a></p>
 						</article>
 					</section>
-					<section id="interest">
+					<section id="more" class="row equal">
+						<div class="container center-block">
 						<article class="text-center col-md-4 col-push-4"> 
 							<h1>Development Status</h1>
-							<p>For detailed information about the current development status and what we are currently working on, you can visit our <a href="https://tree.taiga.io/project/eskimo-gonimo/backlog">taiga</a> instance.</p>
+							<p>For detailed information about the current development status and what we are currently working on, you can visit our taiga instance.</p>
 							<p>More information about our sprints can be found <a href="https://tree.taiga.io/project/eskimo-gonimo/wiki/sprints">here</a>.</p>
+							<p><a class="btn btn-primary" role="button" href="https://tree.taiga.io/project/eskimo-gonimo/backlog">Visit Taiga</a></p>
 						</article>
 						<article class="text-center col-md-4 col-push-4">
 							<h1>Use it!</h1>
@@ -153,19 +157,31 @@
 							<p>Gonimo is free and open source software! You can find the code on github.</p>
 							<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">Visit Github</a></p>
 						</article>
+						</div>
 					</section>
 				</div>
 			</div>
 		</div>
 	</main>
 
-	<footer class="container-fluid navbar navbar-default">
-		<div class="text-center vcenter">
-			<p class="text-muted">Copyright &copy; <?php if(date("Y") != "2015") echo "2015 - " . date("Y"); else echo "2015"; ?> by Michael Klotzner</p>
+	<footer>
+		<div class="container-fluid navbar navbar-default text-center vcenter">
+			<p>Copyright &copy; <?php if(date("Y") != "2015") echo "2015 - " . date("Y"); else echo "2015"; ?> by Michael Klotzner</p>
 		</div>
 	</footer>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#navbar-top').onePageNav({
+			    currentClass: 'active',
+			    changeHash: false,
+			    scrollThreshold: 0.15,
+			    scrollSpeed: 800
+			});
+		});
+	</script>
 </body>
 </html>
