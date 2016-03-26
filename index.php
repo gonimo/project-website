@@ -156,7 +156,7 @@
 						<article class="text-center col-md-4 col-push-4">
 							<h1>Source Code</h1>
 							<p>Gonimo is free and open source software! You can find the code on github.</p>
-							<p><a class="btn btn-primary" role="button" href="https://github.com/eskimor/mybabymonitor.org">Visit Github</a></p>
+							<p><a class="btn btn-primary" role="button" href="https://github.com/gonimo">Visit Github</a></p>
 						</article>
 		</div>
 	</main>
